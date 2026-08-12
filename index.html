@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wikipedia_clone</title>
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f6f6f6;
+        }
+
+        /* CONFIGURAÇÃO DO TOPO (HEADER) */
+        header {
+            margin-left: 20px;
+            display: flex;
+            margin-top: 20px;
+            gap: 15px;
+            font-size: 12px;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        header span {
+            display: inline-block;
+        }
+
+        #NomeHeader h1 {
+            font-style: Linux Libertine;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #NomeHeader h3 {
+            font-style: Linux Libertine;
+            margin-top: 0px;
+        }
+
+        #search {
+            flex: 1;
+            margin-top: 7px;
+            display: flex;
+            gap: 0;
+            max-width: 600px;
+        }
+
+        #search input[type="search"] {
+            width: 100%;
+            max-width: 350px;
+            padding: 6px 12px;
+            font-size: 14px;
+            box-sizing: border-box;
+            border: 1px solid #a2a9b1;
+            outline: none;
+            transition: border-color 0.2s;
+            height: 32px;
+        }
+
+        #search input[type="submit"] {
+            padding: 6px 16px;
+            background: lightgray;
+            color: white;
+            border: 1px solid #a2a9b1;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            height: 32px;
+            transition: background 0.2s;
+        }
+
+        #search input[type="submit"]:hover {
+            background: #a2a9b3;
+        }
+
+        /* Links da direita no Header */
+        .LinksHeader {
+            margin-top: 17px;
+            margin-left: auto;
+            margin-right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .LinksHeader a {
+            text-decoration: none;
+            color: #3366cc;
+        }
+
+        .LinksHeader a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN: MENU + CONTEÚDO */
+        main {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        /* MENU LATERAL */
+        .menu-lateral {
+            width: 180px;
+            padding-left: 20px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .menu-lateral ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-lateral li {
+            margin-top: 8px;
+            margin: 15px;
+            margin-bottom: 8px;
+        }
+
+        .menu-lateral a {
+            text-decoration: none;
+            color: #3366cc;
+        }
+
+        .menu-lateral p {
+            border-bottom: solid 1px lightgrey;
+            font-weight: 600;
+        }
+
+        .menu-lateral a:hover {
+            text-decoration: underline;
+        }
+
+        /* 🔥 ÁREA DO CONTEÚDO (DIREITA) */
+        .area-conteudo {
+            flex: 1;
+            padding: 0 40px 20px;
+            border-left: 1px solid lightgray;
+        }
+
+        /* 🔥 NAVBAR EM CIMA DO CONTEÚDO */
+        .NavBar {
+            padding: 8px 0;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 16px;
+        }
+
+        .NavBar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .NavBar li {
+            display: inline-block;
+        }
+
+        .NavBar a {
+            text-decoration: none;
+            color: #3366cc;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .NavBar a:hover {
+            text-decoration: underline;
+            background: rgba(51, 102, 204, 0.05);
+        }
+
+        /* CONTEÚDO PRINCIPAL DO ARTIGO */
+        .conteudo-principal {
+            padding: 0;
+        }
+
+        .conteudo-principal h2 {
+            font-family: 'Linux Libertine', Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .conteudo-principal p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #202122;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://pt.wikipedia.org/static/images/icons/wikipedia.png" width="4%" height="auto">
+        <span id="NomeHeader">
+            <h1>Wikipédia</h1>
+            <h3>A enciclopédia livre</h3>
+        </span>
+        <span id="search">
+            <input type="search" placeholder="Pesquisar na Wikipédia">
+            <input type="submit" value="Procurar">
+        </span>
+        <nav class="LinksHeader">
+            <a href="#" id="doar">Doar</a>
+            <a href="#" id="criar_conta">Criar conta</a>
+            <a href="#" id="iniciar_secao">Iniciar sessão</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Menu Lateral Esquerdo -->
+        <nav class="menu-lateral">
+            <p>Menu principal</p>
+            <ul>
+                <li><a href="#">Página principal</a></li>
+                <li><a href="#">Conteúdo destacado</a></li>
+                <li><a href="#">Eventos atuais</a></li>
+                <li><a href="#">Esplanada</a></li>
+                <li><a href="#">Página aleatória</a></li>
+            </ul>
+        </nav>
+
+        <!-- 🔥 ÁREA DO CONTEÚDO (DIREITA) -->
+        <div class="area-conteudo">
+
+            <!-- 🔥 NAVBAR EM CIMA DO CONTEÚDO -->
+            <nav class="NavBar">
+                <ul>
+                    <li><a href="#">Artigo</a></li>
+                    <li><a href="#">Discussão</a></li>
+                    <li><a href="#">Ler</a></li>
+                    <li><a href="#">Editar</a></li>
+                    <li><a href="#">Ver histórico</a></li>
+                </ul>
+            </nav>
+
+            <!-- Conteúdo principal do artigo -->
+            <section class="conteudo-principal">
+                <h2>Bem-vindo à Wikipédia</h2>
+                <p>Este é o espaço onde os artigos clonados serão exibidos lado a lado com o seu novo menu lateral.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
